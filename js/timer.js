@@ -22,7 +22,9 @@ function Timer(game) {
 
         if (this.getMinutes() !== 0 && this.getSeconds() === 0) {
 
-          this._audioBeepEl.play();
+          if (this._audioBeepEl) {
+            this._audioBeepEl.play();
+          }
 
           for (let i = 0; i < this._game._participants.length; i++) {
             let participant = this._game._participants[i];
