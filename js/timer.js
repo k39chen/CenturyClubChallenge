@@ -6,6 +6,7 @@ function Timer(game) {
   this._isPaused = false;
   this._el = document.getElementById('timer');
   this._progressEl = document.getElementById('progress');
+  this._audioBeepEl = document.getElementById('audioBeep');
 
   this.start = () => {
     this._elapsedMilliseconds = 0;
@@ -20,6 +21,9 @@ function Timer(game) {
         this.updateProgressBar();
 
         if (this.getMinutes() !== 0 && this.getSeconds() === 0) {
+
+          this._audioBeepEl.play();
+
           for (let i = 0; i < this._game._participants.length; i++) {
             let participant = this._game._participants[i];
             
