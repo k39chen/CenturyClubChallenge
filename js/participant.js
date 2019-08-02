@@ -6,6 +6,8 @@ function Participant(game, name) {
   this._nameEl = null;
   this._counterEl = null;
   this._buttonEl = null;
+  this._progressEl = null;
+  this._progressBarEl = null;
   this._counter = 0;
   this._hasSurrendered = false;
 
@@ -41,6 +43,12 @@ function Participant(game, name) {
     this._nameEl.classList = 'participant-name';
     this._nameEl.innerText = this._name;
 
+    this._progressEl = document.createElement('div');
+    this._progressEl.classList = 'participant-progress';
+
+    this._progressBarEl = document.createElement('div');
+    this._progressBarEl.classList = 'participant-progress-bar';
+
     this._counterEl = document.createElement('div');
     this._counterEl.classList = 'participant-counter';
     this._counterEl.innerText = '0';
@@ -54,9 +62,12 @@ function Participant(game, name) {
       this.surrender();
     });
 
+    this._progressEl.appendChild(this._progressBarEl);
+
     participantEl.appendChild(this._nameEl);
-    participantEl.appendChild(this._counterEl);
+    participantEl.appendChild(this._progressEl);
     participantEl.appendChild(this._buttonEl);
+    participantEl.appendChild(this._counterEl);
 
     this._containerEl.appendChild(participantEl);
 
@@ -65,6 +76,7 @@ function Participant(game, name) {
 
   this._updateCounter = () => {
     this._counterEl.innerText = this._counter;
+    this._progressBarEl.style.width = `${this._counter}%`;
   };
 
   this._createElement();

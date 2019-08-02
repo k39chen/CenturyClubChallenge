@@ -52,38 +52,67 @@ html, body {
 
 #participantsContainer {
   display: flex;
+  flex-flow: column;
   width: 100%;
   margin-bottom: 3em;
 }
 
 .participant {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  width: 25%;
-  margin: 0 0.5em;
-  padding: 1em;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0 1em;
   background-color: #3e597a;
   border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.participant:last-child {
+  margin-bottom: 0;
 }
 
 .participant > .participant-name {
-  display: flex;
+  float: left;
   font-weight: bold;
-  font-size: 0.9em;
+  width: 240px;
+  margin-top: 0.75em;
+  font-size: 2em;
   text-transform: uppercase;
   color: #8ca5c5;
 }
 
+.participant > .participant-progress {
+  float: left;
+  position: relative;
+  width: calc(100% - 520px);
+  height: 3px;
+  margin-left: 2em;
+  margin-top: 2.5em;
+  background-color: #fff;
+}
+
+.participant > .participant-progress > .participant-progress-bar {
+  transition: width 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #f89728;
+}
+
 .participant > .participant-counter {
+  float: right;
   margin: 0.25em 0;
+  margin-right: 0.5em;
   font-size: 3em;
   color: #fff;
 }
 
 .participant > .participant-surrender-button {
-  width: 100%;
+  float: right;
+  width: auto;
+  margin-top: 1.75em;
 }
 
 h1 {
