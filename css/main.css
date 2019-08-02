@@ -1,0 +1,131 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', 'sans-serif';
+  font-size: 20px;
+  color: #fff;
+  background-color: #243447;
+}
+
+#container {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#timer {
+  font-size: 5em;
+  color: #f89728;
+}
+
+#progressBar {
+  position: relative;
+  width: 75%;
+  height: 3px;
+  margin: 2em 0;
+  background-color: #fff;
+}
+
+#theEnd {
+  display: none;
+  margin-bottom: 0.75em;
+  font-size: 5em;
+  font-weight: bold;
+  color: #f89728;
+  text-transform: uppercase;
+}
+
+#progressBar > #progress {
+  transition: width 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #f89728;
+}
+
+#participantsContainer {
+  display: flex;
+  width: 75%;
+  margin-bottom: 3em;
+}
+
+.participant {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  margin: 0 0.5em;
+  padding: 1em;
+  background-color: #3e597a;
+  border-radius: 3px;
+}
+
+.participant > .participant-name {
+  display: flex;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  color: #8ca5c5;
+}
+
+.participant > .participant-counter {
+  margin: 0.25em 0;
+  font-size: 3em;
+  color: #fff;
+}
+
+.participant > .participant-surrender-button {
+  width: 100%;
+}
+
+h1 {
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #94a5b8;
+}
+
+button {
+  transition: opacity 0.2s;
+  overflow: hidden;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  width: 8em;
+  height: 2em;
+  line-height: 2em;
+  font-family: 'ProximaNovaBd', Arial;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: #3e597a;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+  box-sizing: border-box;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+button.primary {
+  width: auto;
+  padding: 0 0.7em;
+  background-color: #f89728;
+  font-weight: normal;
+  font-size: 0.9em;
+}
+
+button:disabled {
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #f00;
+}

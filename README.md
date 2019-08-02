@@ -3,7 +3,7 @@ Century Club Challenge
 
 Small hard-coded web appliation to attempt the Century Club Challenge. Supported participants: Kevin, Hamza, John, Dharssan. [Try it now](http://htmlpreview.github.io/?https://github.com/k39chen/CenturyClubChallenge/blob/master/index.html)!
 
-![alt='promo2.jpg'](promo2.jpg)
+![alt='promo.jpg'](promo.jpg)
 
 Notes
 -------------
